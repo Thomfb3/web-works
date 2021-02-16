@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.css">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <title>How the web works exercise</title>
+
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        .question {
+            background-color: #efefef;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .answer {
+            margin: 0px 10px 10px 10px;
+            padding: 5px 10px 15px 10px;
+        }
+
+
+        .sub-heading {
+            margin-top: 15px;
+            margin-left: 10px;
+        }
+
+        .heading {
+            margin-top: 15px;
+            margin-left: 10px;
+        }
+
+        .display-4 {
+            font-size: 45px;
+        }
+
+        img {
+            padding: 15px;
+        }
+
+        footer {
+            padding: 10px;
+            margin-top: 20px;
+            height: 100px;
+            background-color: #555;
+        }
+
+        footer p {
+            color: #efefef;
+            padding: 5px 0px 5px 10px;
+            margin: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="display-4 heading text-primary">How The Web Works Exercises</h1>
+    <p class="heading">Submitted by: Tom Balunis</p>
+    <hr>
+    <h1 class="display-4 heading">Part One</h1>
+
+    <p class="d-block question">1. What is HTTP?</p>
+    <p class="d-block answer">HTTP stands for Hypertext Transfer Protocol. Protocols are the conventions by which one
+        thing talks to another. HTTP is the standard protocol for communication between browsers and servers.</p>
+
+    <p class="d-block question">2. What is a URL?</p>
+    <p class="d-block answer">URL stands for Uniform Resource Locator. A URL is the address that specifies the location
+        for any resource on a network.</p>
+
+    <p class="d-block question">3. What is a DNS?</p>
+    <p class="d-block answer">DNS stands for Domain Name System. When a client makes a request for a web address/domain
+        name, the DNS looks up the IP address for a domain name and delivers the IP address to the client that made the
+        request.</p>
+
+    <p class="d-block question">4. What is a query string?</p>
+    <p class="d-block answer">The query string is extra information added to the url that assigns values to sepcified
+        parameters. Examples of such info could be search terms, info from forms, a specified databse entry, etc.</p>
+
+    <p class="d-block question">5. What are two HTTP verbs and how are they different?</p>
+    <p class="d-block answer">Two common HTTP verbs are GET and POST. A GET request will specificy resources which the
+        client would like served back to them. A POST request would is used to submit an entity or information to a
+        specified resource. A GET request has no side effects and POST request has side effects</p>
+
+    <p class="d-block question">6. What is an HTTP request?</p>
+    <p class="d-block answer">HTTP requests are methods to indicate a desired action to be performed on a specified
+        resource.</p>
+
+    <p class="d-block question">7. What is an HTTP response</p>
+    <p class="d-block answer">An HTTP response is the response from a server upon that server receiving an HTTP request.
+    </p>
+
+    <p class="d-block question">8. What is an HTTP header? Give a couple examples of request and response headers you
+        have seen.</p>
+    <p class="d-block answer">The HTTP header is a field in an HTTP request or response that includes additional content
+        and information. Some examples of content included in headers are hostname, date, language, cookies.</p>
+
+    <p class="d-block question">9. What are the processes that happen when you type “http://somesite.com/some/page.html”
+        into a browser?</p>
+    <p class="d-block answer">Once the <b>URL</b> is submitted in the address bar of the browser, it will initiate the
+        <b>HTTP, Hypertext Transfer Protocol</b>. The domain name will be sent to the <b>DNS</b>, where the DNS will
+        search for the <b>IP address</b>. The DNS will send the IP address back to the client so the client can then
+        make the GET request to the website's server. The server at that IP address (somesite.com) will receive the GET
+        request for <b>/page.html</b> in the <b>/some/</b> directory of somesite.com. Assuming the page/resource exits
+        at that URL, the server will server that resource to the client and the user at the client will be able to view
+        “http://somesite.com/some/page.html".</p>
+
+    <hr>
+    <h1 class="display-4 heading">Part Two</h1>
+
+
+    <p class="d-block question">1. Using curl, make a GET request to the icanhazdadjoke.com API to find all jokes
+        involving the word “pirate”?</p>
+    <p class="d-block answer">$ curl -H "Accept: application/json" "https://icanhazdadjoke.com/search?term=pirate"</p>
+
+    <p class="d-block question">2. Use dig to find what the IP address is for icanhazdadjoke.com</p>
+    <p class="d-block answer">dig icanhazdadjoke.com +short</p>
+
+    <p class="d-block question">3. Make a simple web page and serve it using python3 -m http.server. Visit the page in a
+        browser.</p>
+    <p class="d-block answer">While in this directory in terminal enter the following command: <b>python3 -m
+            http.server</b>.<br>The in the browser go to the following address: <b>http://0.0.0.0:8000/</b></p>
+
+    <hr>
+    <h1 class="display-4 heading">Part Three</h1>
+    <p class="d-block question">1. Build a very simple HTML form that uses the GET method (it can use the same page URL
+        for the action) when the form is submitted.</p>
+    <p class="d-block answer">If the following form is submitted with the placeholder info, the URL will be:<br>
+        <b>http://0.0.0.0:8000/index.html?first-name=Tom&last-name=Balunis&title=Software+Engineer</b></p>
+
+    <!-- Form Answer 1 -->
+    <div class="container">
+        <form action="index.html" method="get">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input class="form-control" type="text" id="fisrt-name" name="first-name" placeholder="Tom">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input class="form-control" type="text" id="last-name" name="last-name" placeholder="Balunis">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input class="form-control" type="text" id="title" name="title" placeholder="Software Engineer">
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+
+    <p class="d-block question">2. Add a field or two to the form and, after submitting it, explore in Chrome Developer
+        tools how you can view the request and response headers.</p>
+    <p class="d-block answer">The following image includes request and response headers.</p>
+    <!-- Form Answer 2 -->
+    <img src="network.jpg" alt="" class="img-fluid">
+
+
+    <p class="d-block question">3. Edit the page to change the form type to POST, refresh in the browser and re-submit.
+        Do you still see the field in the query string? Explore in Chrome how you can view the request and response
+        headers, as well as the form data.</p>
+
+
+    <p class="d-block answer">If the following form with method="post" is submitted,the response will be:<br>
+        <b>Error response<br></b>
+        <b>Error code: 501<br></b>
+        <b>Message: Unsupported method ('POST').<br></b>
+        <b>Error code explanation: HTTPStatus.NOT_IMPLEMENTED - Server does not support this operation.</p></b>
+    <!-- Form Answer 3 -->
+    <div class="container">
+        <form action="index.html" method="post">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input class="form-control" type="text" id="first-name-2" name="first-name" placeholder="Tom">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input class="form-control" type="text" id="last-name-2" name="last-name" placeholder="Balunis">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input class="form-control" type="text" id="title-2" name="title"
+                            placeholder="Software Engineer">
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <hr>
+    <h1 class="display-4 heading">Part Four</h1>
+
+    <p class="d-block question">At times, it’s useful for your JavaScript to look at the URL of the browser window and
+        change how the script works depending on parts of that (particularly the query string).<br>Try some of the code
+        examples in the Chrome Console so that you can get comfortable with the basic methods and properties for
+        instances of the URL class.</p>
+    <p class="d-block answer">Once the first form has been submitted and the query string is added to the URL, you
+        should see some info below which has been collected and added to the DOM using the URL API.
+    </p>
+    <div class="jumbotron">
+        <p id="url-first-name"></p>
+        <p id="url-last-name"></p>
+        <p id="url-title"></p>
+        <p id="hostname"></p>
+        <p id="pathname"></p>
+
+    </div>
+    <footer>
+        <p>End of Exercise</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+        const url = new URL(window.location.href);
+        console.log(`First Name: ${url.searchParams.get("first-name")}`);
+        console.log(`Last Name: ${url.searchParams.get("last-name")}`);
+        console.log(`Title: ${url.searchParams.get("title")}`);
+        console.log(`URL hostname: ${url.hostname}`);
+        console.log(`URL pathname: ${url.pathname}`);
+
+
+        $("#url-first-name").append(`First Name: ${url.searchParams.get("first-name")}`);
+        $("#url-last-name").append(`Last Name: ${url.searchParams.get("last-name")}`);
+        $("#url-title").append(`Title: ${url.searchParams.get('title')}`);
+        $("#hostname").append(`URL hostname: ${url.hostname}`);
+        $("#pathname").append(`URL pathname: ${url.pathname}`);
+
+
+
+    </script>
+
+
+</body>
+
+</html>
